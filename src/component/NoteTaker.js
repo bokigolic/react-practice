@@ -13,10 +13,7 @@ const NoteTaker = () => {
     const newNote = {
       id: uuidv4(),
       text: input
-      
-
     }
-
 
     setNotes([...notes, newNote])
 
