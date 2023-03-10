@@ -14,7 +14,7 @@ setCounter(counter +1)
     setCounter(0)
   }
   return (
-    <div>
+    <div className="counter">
 
       <h1>Counter {counter}</h1>
     
