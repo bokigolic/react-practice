@@ -6,8 +6,6 @@ function App() {
   return (
     <div className="App">
       <>
-        My name is Bojan
-
         <Test />
       </>
     </div>
