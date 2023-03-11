@@ -1,46 +1,50 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-
-
 const Test2 = () => {
 
-  const [input, setInput] = useState();
-  const [dugme, setDugme] = useState([])
 
-  const handleChange = (e) => {
-    setInput(e.target.value)
-  }
 
-  const handleClick = (e) => {
-    e.preventDefault()
+  const handleClick = () =>{
 
-    const unos = {
-      id: uuidv4(),
-      text: input
-    }
-
-    setDugme([...dugme, unos])
   }
   return (
-    <div className="note">
-      <h3>Moj test</h3>
-      <label>Enter value: </label>
-      <input
-        type='text'
-        value={input}
-        onChange={handleChange}
+    <div className="calculator">
+      <h2>Calculator</h2>
+     <div>
+      <div className="input">
+        <input />
+      </div>
+     <button type="button" onClick={handleClick}>7</button>
+      <button type="button" onClick={handleClick}>8</button>
+      <button type="button" onClick={handleClick}>9</button>
+      <button type="button" onClick={handleClick}>*</button>
+     </div>
+      <div>
+      <button type="button" onClick={handleClick}>4</button>
+      <button type="button" onClick={handleClick}>5</button>
+      <button type="button" onClick={handleClick}>6</button>
+      <button type="button" onClick={handleClick}>-</button>
 
+      </div>
 
-      />
-      <button type="button" onClick={handleClick}>Add</button>
-
-      <ol>
-        {dugme.map(note => (
-          <li key={note.id}>{note.text} {note.number}</li>
-        ))}
-      </ol>
+      <div>
+      <button type="button" onClick={handleClick}>1</button>
+      <button type="button" onClick={handleClick}>2</button>
+      <button type="button" onClick={handleClick}>3</button>
+      <button type="button" onClick={handleClick}>+</button>
+      </div>
+      <div>
+      <button type="button" onClick={handleClick}>c</button>
+      <button type="button" onClick={handleClick}>0</button>
+      <button type="button" onClick={handleClick}>.</button>
+      <button type="button" onClick={handleClick}>/</button>
+      </div>
+      <div>
+      <button className="jednako" type="button" onClick={handleClick}>=</button>
+      </div>
     </div>
   )
 }
+
 export default Test2;
