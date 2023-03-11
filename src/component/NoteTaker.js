@@ -38,7 +38,7 @@ const NoteTaker = () => {
       </form>
       <ol>
         {notes.map(note => (
-          <li key={note.id}>{note.text} {note.number}</li>
+          <li key={note.id}>{note.text}</li>
         ))}
       </ol>
     </div>

@@ -14,3 +14,30 @@
   height: auto;
   background-color: rgb(255, 199, 125);
 }
+
+.calculator{
+  border: 1px solid black;
+  width: 350px;
+  height: auto;
+  background-color: rgb(245, 208, 161);
+
+}
+.calculator button{
+  width: 35px;
+  height: 30px;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  margin: 1px;
+  border: 2px solid rgb(152, 138, 138);
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.calculator input{
+  width: 139px;
+}
+
+.calculator .jednako{
+  width: 147px;
+}
