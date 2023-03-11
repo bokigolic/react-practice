@@ -13,15 +13,21 @@ const Test2 = () => {
       setInputValue("");
       setFirstNumber(null);
       setOperation(null);
-    } else if (value === "+") {
-      setFirstNumber(parseInt(inputValue));
-      setOperation("+");
+    } else if (value === "+" || value === "-" || value === "*" || value === "/") {
+      setFirstNumber(parseFloat(inputValue));
+      setOperation(value);
       setInputValue("");
     } else if (value === "=") {
-      const secondNumber = parseInt(inputValue);
+      const secondNumber = parseFloat(inputValue);
       let result;
       if (operation === "+") {
         result = firstNumber + secondNumber;
+      } else if (operation === "-") {
+        result = firstNumber - secondNumber;
+      } else if (operation === "*") {
+        result = firstNumber * secondNumber;
+      } else if (operation === "/") {
+        result = firstNumber / secondNumber;
       }
       setInputValue(result.toString());
       setFirstNumber(result);
