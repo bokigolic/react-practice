@@ -2,20 +2,27 @@ import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 const Test2 = () => {
+  const [inputValue, setInputValue] = useState("");
 
 
 
-  const handleClick = () =>{
 
+  const handleClick = (e) =>{
+    const value = e.target.value;
+    setInputValue(inputValue + value)
+console.log()
   }
   return (
     <div className="calculator">
       <h2>Calculator</h2>
      <div>
       <div className="input">
-        <input />
+      <input 
+      type="text" 
+      value={inputValue} 
+      />
       </div>
-     <button type="button" onClick={handleClick}>7</button>
+     <button type="button" onClick={handleClick} value='7'>7</button>
       <button type="button" onClick={handleClick}>8</button>
       <button type="button" onClick={handleClick}>9</button>
       <button type="button" onClick={handleClick}>*</button>
