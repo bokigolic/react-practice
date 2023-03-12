@@ -25,6 +25,11 @@ const Note2 = () => {
       telefon: ""
     });
   }
+
+  const handleDelete = (id) => {
+    setNotes(notes.filter(note => note.id !== id));
+  }
+
   const [notes, setNotes] = useState([])
   const [zaInput, setZaInput] = useState({
     ime: "",
@@ -64,6 +69,8 @@ const Note2 = () => {
         onChange={handleChange}
       /> <br />
       <button type="button" onClick={handleClick}>Add</button>
+      
+
 
       <div className="rezultat">
         {notes.map(note => (
@@ -76,6 +83,7 @@ const Note2 = () => {
               <li><p>Broj Telefona: {note.text.telefon}</p></li>
 
             </ol>
+            <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
           </div>
         ))}
       </div>
