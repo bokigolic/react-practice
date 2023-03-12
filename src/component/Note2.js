@@ -5,18 +5,25 @@ import { v4 as uuidv4 } from 'uuid';
 const Note2 = () => {
 
   const handleChange = (e) => {
-    setZaInput(e.target.value)
+    const { name, value } = e.target;
+    setZaInput(prevState => ({
+      ...prevState,
+      [name]: value
+    }));
   }
-
   const handleClick = () => {
     const newNote = {
       id: uuidv4(),
       text: zaInput
-    }
+    };
+    setNotes([...notes, newNote]);
 
-    setNotes([...notes, newNote])
-
-    setZaInput('')
+    setZaInput({
+      ime: "",
+      prezime: "",
+      email: "",
+      telefon: ""
+    });
   }
   const [notes, setNotes] = useState([])
   const [zaInput, setZaInput] = useState({
@@ -58,10 +65,19 @@ const Note2 = () => {
       /> <br />
       <button type="button" onClick={handleClick}>Add</button>
 
-      <div>
-        {
+      <div className="rezultat">
+        {notes.map(note => (
+          <div key={note.id}>
 
-        }
+            <ol>
+              <li><p>Ime: {note.text.ime}</p></li>
+              <li><p>Prezime: {note.text.prezime}</p></li>
+              <li><p>Email: {note.text.email}</p></li>
+              <li><p>Broj Telefona: {note.text.telefon}</p></li>
+
+            </ol>
+          </div>
+        ))}
       </div>
     </div>
 
