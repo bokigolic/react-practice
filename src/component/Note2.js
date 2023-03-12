@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Note2 = () => {
 
+
   const [notes, setNotes] = useState([]);
   const [zaInput, setZaInput] = useState({
     ime: "",
@@ -58,31 +59,27 @@ const Note2 = () => {
   };
 
   return (
-    <div className="note-dva">
+    <div class="form__group field">
       <h2>Note 2</h2>
-      <label>Ime: </label>
-      <input
-        type="text"
+      <label for="name" class="form__label"></label>
+      <input type="input" class="form__field" placeholder="Name..."
         name="ime"
         value={zaInput.ime}
         onChange={handleChange}
       /> <br />
-      <label>Prezime: </label>
-      <input
-        type="text"
+      <label for="name" class="form__label"></label>
+      <input type="input" class="form__field" placeholder="Last name..."
         name="prezime"
         value={zaInput.prezime}
         onChange={handleChange}
       /> <br />
-      <label>Email: </label>
-      <input
-        type="text"
+      <label for="name" class="form__label"> </label>
+      <input type="input" class="form__field" placeholder="someone@gmail.com"
         name="email"
         value={zaInput.email}
         onChange={handleChange}
       /> <br />
-      <label>Broj Telefona: </label>
-      <input
+      <label for="name" class="form__label"></label>      <input class="form__field" placeholder="55555555555"
         type="number"
         name="telefon"
         value={zaInput.telefon}
@@ -93,21 +90,23 @@ const Note2 = () => {
       ) : (
         <button type="button" onClick={handleClick}>Add</button>
       )}
-      
+
       <div className="rezultat">
         {notes.map(note => (
           <div key={note.id}>
 
-            <ol>
-              <li><p>Ime: {note.text.ime}</p></li>
-              <li><p>Prezime: {note.text.prezime}</p></li>
+            <ol className="lista">
+              <li><p>Name: {note.text.ime}</p></li>
+              <li><p>Last name: {note.text.prezime}</p></li>
               <li><p>Email: {note.text.email}</p></li>
-              <li><p>Broj Telefona: {note.text.telefon}</p></li>
+              <li><p>Phone: {note.text.telefon}</p></li>
 
             </ol>
-            <button type="button" onClick={() => handleEdit(note)}>Edit</button>
-            <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
+            <div class="container">
 
+              <button type="button" onClick={() => handleEdit(note)}>Edit</button>
+              <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
+            </div>
           </div>
         ))}
       </div>

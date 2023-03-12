@@ -44,42 +44,106 @@
 
 
 
-.note-dva {
-  border: 1px solid black;
-  width: auto;
-  height: auto;
-  background-color: rgb(225, 200, 167);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
 
-.note-dva label {
-  flex-basis: 30%;
-  text-align: right;
-  padding-right: 10px;
-  margin-bottom: 0;
 
-}
-
-.note-dva input {
-  flex-basis: 70%;
-  padding: 5px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-}
-
-.rezultat{
-  border: 1px solid black;
+.rezultat {
   width: auto;
   height: auto;
   background-color: rgb(206, 229, 238);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
   flex-direction: row;
+}
+
+.lista {
+  border: 1px solid rgb(165, 157, 157);
+  padding: 20px;
+
+}
+
+
+
+
+
+
+
+
+:root {
+  --page-background: hsl(220, 55%, 12%);
+}
+
+button {
+  --text-base: hsl(220, 55%, 40%);
+  --text-hover: hsl(250, 72%, 86%);
+  --shadow-start: hsl(calc(220 + 180), 100%, 72%);
+  --shadow-end: hsl(calc(220 + 5), 90%, 50%);
+  --shadow-inner: hsl(220, 70%, 31%);
+  all: unset;
+  color: var(--text-base);
+  font: 700 1.125rem/1.2 Raleway, sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding:8px;
+  width: 80px;
+  background: inherit;
+  background-clip: padding-box;
+  border: 3px solid var(--text-base);
+  border-radius: 1em;
+  cursor: pointer;
+  position: relative;
+  transition: 0.25s ease-out;
+}
+
+button::before,
+button::after {
+  content: "";
+  border-radius: inherit;
+  transition: inherit;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+button::before {
+  inset: -0.2em;
+  z-index: -1;
+  background: linear-gradient(var(--shadow-start), var(--shadow-end));
+  filter: blur(1.2em) saturate(1.2);
+  transform-origin: bottom;
+  transform: scaleY(0.5);
+  opacity: 0;
+}
+
+button::after {
+  box-shadow: inset 0 0 0 1px #fff, 0 0 0 4px hsla(0deg, 0%, 100%, 0.7),
+    1px 1px 0 4px #fff;
+  mix-blend-mode: overlay;
+  opacity: 0;
+}
+
+button:hover,
+button:focus {
+  color: var(--text-hover);
+  border-color: transparent;
+  box-shadow: inset 0 1.4em 0 var(--shadow-inner, 0.1),
+    inset 0 0 1.4em var(--shadow-inner, 0.32) 0 1px 1px var(--shadow-inner, 0.32);
+
+}
+
+
+
+
+
+
+.container {
+  background: var(--page-background);
+  background-color: yellow;
+}
+
+.container {
+  padding: 3em;
+  position: relative;
+  z-index: 1;
 }
