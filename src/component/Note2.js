@@ -1,11 +1,24 @@
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid';
+
 
 const Note2 = () => {
 
-  const handleChange = () => {
-
+  const handleChange = (e) => {
+    setZaInput(e.target.value)
   }
 
+  const handleClick = () => {
+    const newNote = {
+      id: uuidv4(),
+      text: zaInput
+    }
+
+    setNotes([...notes, newNote])
+
+    setZaInput('')
+  }
+  const [notes, setNotes] = useState([])
   const [zaInput, setZaInput] = useState({
     ime: "",
     prezime: "",
@@ -38,13 +51,20 @@ const Note2 = () => {
       /> <br />
       <label>Broj Telefona: </label>
       <input
-        type="text"
+        type="number"
         name="telefon"
         value={zaInput.telefon}
         onChange={handleChange}
       /> <br />
-      <button type="button">Add</button>
+      <button type="button" onClick={handleClick}>Add</button>
+
+      <div>
+        {
+
+        }
+      </div>
     </div>
+
   )
 }
 export default Note2
