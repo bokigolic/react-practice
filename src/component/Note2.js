@@ -4,19 +4,41 @@ import { v4 as uuidv4 } from 'uuid';
 
 const Note2 = () => {
 
+  const [notes, setNotes] = useState([]);
+  const [zaInput, setZaInput] = useState({
+    ime: "",
+    prezime: "",
+    email: "",
+    telefon: ""
+  });
+  const [editNote, setEditNote] = useState(null);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setZaInput(prevState => ({
       ...prevState,
       [name]: value
     }));
-  }
+  };
+
   const handleClick = () => {
-    const newNote = {
-      id: uuidv4(),
-      text: zaInput
-    };
-    setNotes([...notes, newNote]);
+    if (editNote) {
+      const updatedNote = {
+        ...editNote,
+        text: zaInput
+      };
+      const updatedNotes = notes.map(note => (
+        note.id === editNote.id ? updatedNote : note
+      ));
+      setNotes(updatedNotes);
+      setEditNote(null);
+    } else {
+      const newNote = {
+        id: uuidv4(),
+        text: zaInput
+      };
+      setNotes([...notes, newNote]);
+    }
 
     setZaInput({
       ime: "",
@@ -24,19 +46,17 @@ const Note2 = () => {
       email: "",
       telefon: ""
     });
-  }
+  };
 
   const handleDelete = (id) => {
     setNotes(notes.filter(note => note.id !== id));
-  }
+  };
 
-  const [notes, setNotes] = useState([])
-  const [zaInput, setZaInput] = useState({
-    ime: "",
-    prezime: "",
-    email: "",
-    telefon: ""
-  })
+  const handleEdit = (note) => {
+    setZaInput(note.text);
+    setEditNote(note);
+  };
+
   return (
     <div className="note-dva">
       <h2>Note 2</h2>
@@ -68,10 +88,12 @@ const Note2 = () => {
         value={zaInput.telefon}
         onChange={handleChange}
       /> <br />
-      <button type="button" onClick={handleClick}>Add</button>
+      {editNote ? (
+        <button type="button" onClick={handleClick}>Update</button>
+      ) : (
+        <button type="button" onClick={handleClick}>Add</button>
+      )}
       
-
-
       <div className="rezultat">
         {notes.map(note => (
           <div key={note.id}>
@@ -83,7 +105,9 @@ const Note2 = () => {
               <li><p>Broj Telefona: {note.text.telefon}</p></li>
 
             </ol>
+            <button type="button" onClick={() => handleEdit(note)}>Edit</button>
             <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
+
           </div>
         ))}
       </div>
