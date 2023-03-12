@@ -1,28 +1,27 @@
+.counter {
 
-
-.counter{
-  
   border: 1px solid black;
   width: 350px;
   height: auto;
   background-color: antiquewhite;
 }
 
-.note{
+.note {
   border: 1px solid black;
   width: 350px;
   height: auto;
   background-color: rgb(255, 199, 125);
 }
 
-.calculator{
+.calculator {
   border: 1px solid black;
   width: 350px;
   height: auto;
   background-color: rgb(245, 208, 161);
 
 }
-.calculator button{
+
+.calculator button {
   width: 35px;
   height: 30px;
   align-items: center;
@@ -34,24 +33,37 @@
   border-radius: 5px;
 }
 
-.calculator input{
+.calculator input {
   width: 139px;
 }
 
-.calculator .jednako{
+.calculator .jednako {
   width: 147px;
 }
 
-.note-dva{
+.note-dva {
   border: 1px solid black;
-  width: 350px;
+  width: auto;
   height: auto;
-  background-color: rgb(255, 199, 125);
-  align-items: center;
+  background-color: rgb(225, 200, 167);
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-.note-dva label{
+.note-dva label {
+  flex-basis: 30%;
+  text-align: right;
+  padding-right: 10px;
+  margin-bottom: 0;
+
+}
+
+.note-dva input {
+  flex-basis: 70%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
