@@ -41,3 +41,17 @@
 .calculator .jednako{
   width: 147px;
 }
+
+.note-dva{
+  border: 1px solid black;
+  width: 350px;
+  height: auto;
+  background-color: rgb(255, 199, 125);
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.note-dva label{
+}
