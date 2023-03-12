@@ -1,5 +1,4 @@
 .counter {
-
   border: 1px solid black;
   width: 350px;
   height: auto;
@@ -18,7 +17,6 @@
   width: 350px;
   height: auto;
   background-color: rgb(245, 208, 161);
-
 }
 
 .calculator button {
@@ -46,22 +44,28 @@
 
 
 
+
 .rezultat {
   width: auto;
   height: auto;
-  background-color: rgb(206, 229, 238);
   display: flex;
   flex-direction: column;
   align-items: center;
   flex-direction: row;
 }
 
-.lista {
-  border: 1px solid rgb(165, 157, 157);
+.ispis {
   padding: 20px;
+  background-color: rgb(241, 247, 247);
+  box-shadow: 10px 5px 5px rgb(192, 188, 188);
+  margin: 10px;
 
 }
 
+.ispis p{
+  box-shadow: 10px 5px 5px rgb(192, 188, 188);
+
+}
 
 
 
@@ -85,7 +89,7 @@ button {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-align: center;
-  padding:8px;
+  padding: 8px;
   width: 80px;
   background: inherit;
   background-clip: padding-box;
@@ -132,18 +136,32 @@ button:focus {
 
 }
 
-
-
-
-
-
 .container {
   background: var(--page-background);
-  background-color: yellow;
 }
 
 .container {
   padding: 3em;
   position: relative;
   z-index: 1;
+}
+
+.forma {
+  padding: 15px;
+  border: 1px solid black;
+  background-color: rgb(235, 237, 238);
+
+}
+
+.forma input {
+  border-radius: 6px;
+  background-color: rgb(241, 247, 247);
+  box-shadow: 10px 5px 5px rgb(232, 229, 229);
+  padding: 5px;
+  margin: 5px;
+  --text-base: hsl(220, 55%, 40%);
+  --text-hover: hsl(250, 72%, 86%);
+  --shadow-start: hsl(calc(220 + 180), 100%, 72%);
+  --shadow-end: hsl(calc(220 + 5), 90%, 50%);
+  --shadow-inner: hsl(220, 70%, 31%);
 }

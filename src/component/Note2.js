@@ -59,32 +59,38 @@ const Note2 = () => {
   };
 
   return (
-    <div class="form__group field">
+    <div className="forma">
       <h2>Note 2</h2>
-      <label for="name" class="form__label"></label>
-      <input type="input" class="form__field" placeholder="Name..."
+      <label for="name"></label>
+      <input type="input" placeholder="Name..."
         name="ime"
         value={zaInput.ime}
         onChange={handleChange}
-      /> <br />
-      <label for="name" class="form__label"></label>
-      <input type="input" class="form__field" placeholder="Last name..."
+      /> 
+      <br />
+      <label for="name"></label>
+      <input type="input" placeholder="Last name..."
         name="prezime"
         value={zaInput.prezime}
         onChange={handleChange}
-      /> <br />
-      <label for="name" class="form__label"> </label>
-      <input type="input" class="form__field" placeholder="someone@gmail.com"
+      /> 
+      <br />
+      <label for="name"> </label>
+      <input type="input" placeholder="someone@gmail.com"
         name="email"
         value={zaInput.email}
         onChange={handleChange}
-      /> <br />
-      <label for="name" class="form__label"></label>      <input class="form__field" placeholder="55555555555"
+      /> 
+      <br />
+      <label for="name"></label>
+      <input placeholder="55555555555"
         type="number"
         name="telefon"
         value={zaInput.telefon}
         onChange={handleChange}
-      /> <br />
+      />
+      <br />
+
       {editNote ? (
         <button type="button" onClick={handleClick}>Update</button>
       ) : (
@@ -95,15 +101,14 @@ const Note2 = () => {
         {notes.map(note => (
           <div key={note.id}>
 
-            <ol className="lista">
-              <li><p>Name: {note.text.ime}</p></li>
-              <li><p>Last name: {note.text.prezime}</p></li>
-              <li><p>Email: {note.text.email}</p></li>
-              <li><p>Phone: {note.text.telefon}</p></li>
-
+            <ol className="ispis">
+              <p>Name: {note.text.ime}</p>
+              <p>Last name: {note.text.prezime}</p>
+              <p>Email: {note.text.email}</p>
+              <p>Phone: {note.text.telefon}</p>
             </ol>
-            <div class="container">
 
+            <div class="container">
               <button type="button" onClick={() => handleEdit(note)}>Edit</button>
               <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
             </div>
