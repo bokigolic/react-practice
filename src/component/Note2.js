@@ -83,8 +83,8 @@ const Note2 = () => {
       /> 
       <br />
       <label for="name"></label>
-      <input placeholder="55555555555"
-        type="number"
+      <input placeholder="Message..."
+        type="text"
         name="telefon"
         value={zaInput.telefon}
         onChange={handleChange}
@@ -105,7 +105,7 @@ const Note2 = () => {
               <p>Name: {note.text.ime}</p>
               <p>Last name: {note.text.prezime}</p>
               <p>Email: {note.text.email}</p>
-              <p>Phone: {note.text.telefon}</p>
+              <p>Message: {note.text.telefon}</p>
             </ol>
 
             <div class="container">

@@ -43,130 +43,82 @@
 
 
 
-
-
-.rezultat {
-  width: auto;
-  height: auto;
+.forma {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-
+  margin: 20px;
 }
 
-.ispis {
-  padding: 20px;
-  background-color: rgb(241, 247, 247);
-  box-shadow: 10px 5px 5px rgb(192, 188, 188);
-  margin: 10px;
-
+.forma input[type="input"],
+.forma input[type="text"] {
+  width: 300px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid rgb(217, 180, 180);
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(228, 165, 165, 0.8);
+  animation: fade-in 0.3s ease-out;
 }
 
-.ispis p{
-  box-shadow: 10px 5px 5px rgb(192, 188, 188);
-
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 99;
+  }
 }
 
 
-
-
-
-
-
-:root {
-  --page-background: hsl(220, 55%, 12%);
-}
-
-button {
-  --text-base: hsl(220, 55%, 40%);
-  --text-hover: hsl(250, 72%, 86%);
-  --shadow-start: hsl(calc(220 + 180), 100%, 72%);
-  --shadow-end: hsl(calc(220 + 5), 90%, 50%);
-  --shadow-inner: hsl(220, 70%, 31%);
-  all: unset;
-  color: var(--text-base);
-  font: 700 1.125rem/1.2 Raleway, sans-serif;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 8px;
-  width: 80px;
-  background: inherit;
-  background-clip: padding-box;
-  border: 3px solid var(--text-base);
-  border-radius: 1em;
+.forma button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
   cursor: pointer;
-  position: relative;
-  transition: 0.25s ease-out;
 }
 
-button::before,
-button::after {
-  content: "";
-  border-radius: inherit;
-  transition: inherit;
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+.forma button:hover,
+.forma button[type="button"]:hover {
+  opacity: 0.8;
+  background-color: #3E8E41;
 }
 
-button::before {
-  inset: -0.2em;
-  z-index: -1;
-  background: linear-gradient(var(--shadow-start), var(--shadow-end));
-  filter: blur(1.2em) saturate(1.2);
-  transform-origin: bottom;
-  transform: scaleY(0.5);
-  opacity: 0;
+
+.rezultat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-button::after {
-  box-shadow: inset 0 0 0 1px #fff, 0 0 0 4px hsla(0deg, 0%, 100%, 0.7),
-    1px 1px 0 4px #fff;
-  mix-blend-mode: overlay;
-  opacity: 0;
+.rezultat ol {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  width: 400px;
 }
 
-button:hover,
-button:focus {
-  color: var(--text-hover);
-  border-color: transparent;
-  box-shadow: inset 0 1.4em 0 var(--shadow-inner, 0.1),
-    inset 0 0 1.4em var(--shadow-inner, 0.32) 0 1px 1px var(--shadow-inner, 0.32);
-
+.rezultat ol p {
+  margin: 0;
+  font-weight: bold;
 }
 
 .container {
-  background: var(--page-background);
+  display: flex;
+  justify-content: center;
 }
 
-.container {
-  padding: 3em;
-  position: relative;
-  z-index: 1;
-}
-
-.forma {
-  padding: 15px;
-  border: 1px solid black;
-  background-color: rgb(235, 237, 238);
-  display: block;
-  text-align: center;
-
-
-}
-
-.forma input {
-  border-radius: 6px;
-  background-color: rgb(241, 247, 247);
-  box-shadow: 10px 5px 5px rgb(232, 229, 229);
-  padding: 5px;
+.container button {
   margin: 5px;
-  --text-base: hsl(220, 55%, 40%);
-  --text-hover: hsl(250, 72%, 86%);
-  --shadow-start: hsl(calc(220 + 180), 100%, 72%);
-  --shadow-end: hsl(calc(220 + 5), 90%, 50%);
-  --shadow-inner: hsl(220, 70%, 31%);
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.container button:hover {
+  opacity: 0.8;
 }
