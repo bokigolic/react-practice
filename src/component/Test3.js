@@ -1,4 +1,8 @@
+import { useState } from "react"
+
 const Test3 = () => {
+
+  const [input, setInput] = useState()
 
   const handleClick = () => {
     //console.log("Ja sam samrt")
