@@ -6,12 +6,14 @@ import Test2 from './component/Test2';
 import Note2 from './component/Note2';
 import RegistrationForm from './component/RegistrationForm';
 import Test3 from './component/Test3';
+import CatFact from './component/CatFact';
 
 
 function App() {
   return (
     <div className="App">
       <>
+      <CatFact />
         <Test3 />
         <RegistrationForm />
         <Note2 />
