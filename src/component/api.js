@@ -4,10 +4,11 @@ const api = axios.create({
   baseURL: "https://catfact.ninja"
 });
 
-
-const getData = async () => {
-  const response = await api.get('/data')
-  return response.fact;
+export const getData = async () => {
+  try {
+    const response = await api.get('/fact')
+    return response.data.fact;
+  } catch (error) {
+    throw Error(error.message);
+  }
 }
-
-export default api;
