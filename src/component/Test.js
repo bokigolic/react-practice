@@ -14,9 +14,8 @@ setCounter(counter +1)
     setCounter(0)
   }
   return (
-    <div className="counter">
-
-      <h1>Counter {counter}</h1>
+    <div className="form">
+    <h3 className='registration'>Counter</h3>
     
 
       <div>
