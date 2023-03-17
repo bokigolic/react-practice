@@ -1,20 +1,29 @@
 import React, { useEffect, useState } from 'react'
-import getData from './api'
+import { getData } from './api'
 
 const CatFact = () => {
 
   const [facts, setFacts] = useState("")
-  useEffect(() => {
+
+  const fetchData = () => {
     getData()
       .then(response => setFacts(response))
+      .catch((response) => alert(response));
+  }
+
+  useEffect(() => {
+    fetchData();
   }, [])
   return (
 
     <div className="form">
-      <h2>Cat</h2>
-      {facts}
+      <form>
+        <div className='registration'><h3>About cat</h3>
+          {facts}
+        </div>
+        <button type="button" onClick={fetchData}>Next</button>
+      </form >
     </div>
-
   )
 }
 
