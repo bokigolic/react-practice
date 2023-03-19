@@ -35,7 +35,19 @@ const Test4 = () => {
     ctx.stroke();
   };
 
-  const handleImageChange = (event) => {
+  const handleImageChange = useCallback((event) => {
+    const file = event.target.files[0];
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      setImage(img);
+      setRectangles([]);
+      setSelectedRectangleIndex(null);
+    };
+    img.src = url;
+  }, []);
+
+  const handleCanvasMouseDown = useCallback((event) => {
     mouseDownRef.current = true;
     mouseDownPointRef.current = { x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY };
 
@@ -81,21 +93,21 @@ const Test4 = () => {
   }, [image, rectangles, selectedRectangleIndex]);
 
   const handleCanvasMouseUp = useCallback(() => {
-    mouseDownRef.current = false;
-    mouseDownPointRef.current = null;
-    setSelectedRectangleIndex(null);
+    mouseDownRef
+      .current = false;
   }, []);
 
   return (
     <div>
       <input type="file" onChange={handleImageChange} />
-      <canvas
-        ref={canvasRef}
-        onMouseDown={handleCanvasMouseDown}
-        onMouseMove={handleCanvasMouseMove}
-        onMouseUp={handleCanvasMouseUp}
-        style={{ border: "1px solid black" }}
-      />
+      {image && (
+        <canvas
+          ref={canvasRef}
+          onMouseDown={handleCanvasMouseDown}
+          onMouseMove={handleCanvasMouseMove}
+          onMouseUp={handleCanvasMouseUp}
+        />
+      )}
     </div>
   );
 };
