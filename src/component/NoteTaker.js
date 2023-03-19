@@ -25,8 +25,8 @@ const NoteTaker = () => {
   }
 
   return (
-    <div className="note">
-      <h1>Note Taker</h1>
+    <div className="form">
+    <h3 className='registration'>Note taker</h3>
       <form onSubmit={handleSubmit}>
         <label>Enter a note: </label>
         <input

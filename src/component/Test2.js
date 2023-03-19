@@ -37,8 +37,8 @@ const Test2 = () => {
     }
   };
   return (
-    <div className="calculator">
-      <h2>Calculator</h2>
+    <div className="form">
+    <h3 className='registration'>Calculator</h3>
       <div>
         <div className="input">
           <input

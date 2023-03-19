@@ -59,8 +59,10 @@ const Note2 = () => {
   };
 
   return (
-    <div className="forma">
-      <h2>Note 2</h2>
+
+         <div className="form">
+      <h3 className='registration'>Note 2</h3>
+  
       <label for="name"></label>
       <input type="input" placeholder="Name..."
         name="ime"
