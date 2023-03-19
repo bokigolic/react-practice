@@ -7,12 +7,14 @@ import Note2 from './component/Note2';
 import RegistrationForm from './component/RegistrationForm';
 import Test3 from './component/Test3';
 import CatFact from './component/CatFact';
+import Test4 from './component/Test4';
 
 
 function App() {
   return (
     <div className="App">
       <>
+      <Test4 />
       <CatFact />
         <Test3 />
         <RegistrationForm />

@@ -11,4 +11,5 @@ export const getData = async () => {
   } catch (error) {
     throw Error(error.message);
   }
+  
 }
