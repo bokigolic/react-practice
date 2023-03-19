@@ -4,6 +4,7 @@ const Test4 = () => {
   const [image, setImage] = useState(null);
   const [rectangles, setRectangles] = useState([]);
   const [selectedRectangleIndex, setSelectedRectangleIndex] = useState(null);
+  const [selectedColor, setSelectedColor] = useState("blue"); // add state for selected color
 
   const canvasRef = useRef(null);
   const mouseDownRef = useRef(false);
@@ -28,7 +29,7 @@ const Test4 = () => {
   const drawRectangle = (ctx, rect) => {
     ctx.beginPath();
     ctx.rect(rect.x, rect.y, rect.width, rect.height);
-    ctx.fillStyle = rect.color;
+    ctx.fillStyle = rect.color || selectedColor; // use selected color or default to rectangle color
     ctx.fill();
     ctx.strokeStyle = "black";
     ctx.lineWidth = 2;
@@ -72,42 +73,59 @@ const Test4 = () => {
         y: event.nativeEvent.offsetY,
         width: 0,
         height: 0,
-        color: "blue"
+        color: selectedColor // set selected color for new rectangle
       }]);
       setSelectedRectangleIndex(rectangles.length);
     } else {
       setSelectedRectangleIndex(rectIndex);
+      setSelectedColor(rectangles[rectIndex].color); // update selected color for clicked rectangle
     }
-  }, [image, rectangles]);
+  }, [image, rectangles, selectedColor]);
 
   const handleCanvasMouseMove = useCallback((event) => {
-    if (mouseDownRef.current && selectedRectangleIndex !== null) {
-      const rect = rectangles[selectedRectangleIndex];
-      const dx = event.nativeEvent.offsetX - mouseDownPointRef.current.x;
-      const dy = event.nativeEvent.offsetY - mouseDownPointRef.current.y;
-      rect.width = Math.max(Math.min(event.nativeEvent.offsetX, image.width) - rect.x, 0);
-      rect.height = Math.max(Math.min(event.nativeEvent.offsetY, image.height) - rect.y, 0);
+    if (!mouseDownRef.current) return;
+    if (selectedRectangleIndex === null) return;
 
-      setRectangles([...rectangles]);
-    }
-  }, [image, rectangles, selectedRectangleIndex]);
+    const rect = rectangles[selectedRectangleIndex];
+
+    const width = event.nativeEvent.offsetX - mouseDownPointRef.current.x;
+    const height = event.nativeEvent.offsetY - mouseDownPointRef.current.y;
+
+    setRectangles([
+      ...rectangles.slice(0, selectedRectangleIndex),
+      { ...rect, width, height },
+      ...rectangles.slice(selectedRectangleIndex + 1),
+    ]);
+  }, [rectangles, selectedRectangleIndex]);
 
   const handleCanvasMouseUp = useCallback(() => {
-    mouseDownRef
-      .current = false;
+    mouseDownRef.current = false;
+    mouseDownPointRef.current = null;
+  }, []);
+
+  const handleColorChange = useCallback((event) => {
+    setSelectedColor(event.target.value);
   }, []);
 
   return (
     <div>
       <input type="file" onChange={handleImageChange} />
-      {image && (
-        <canvas
-          ref={canvasRef}
-          onMouseDown={handleCanvasMouseDown}
-          onMouseMove={handleCanvasMouseMove}
-          onMouseUp={handleCanvasMouseUp}
-        />
-      )}
+      <br />
+      <canvas
+        ref={canvasRef}
+        onMouseDown={handleCanvasMouseDown}
+        onMouseMove={handleCanvasMouseMove}
+        onMouseUp={handleCanvasMouseUp}
+      />
+      <br />
+      <label>
+        Select color:
+        <select value={selectedColor} onChange={handleColorChange}>
+          <option value="blue">Blue</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+        </select>
+      </label>
     </div>
   );
 };
