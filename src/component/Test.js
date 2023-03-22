@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Test = () => {
+const Test = (props) => {
   const [counter, setCounter] = useState(0);
 
   const handleClickPlus = () => {

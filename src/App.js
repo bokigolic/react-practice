@@ -8,20 +8,28 @@ import RegistrationForm from './component/RegistrationForm';
 import Test3 from './component/Test3';
 import CatFact from './component/CatFact';
 import Test4 from './component/Test4';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 function App() {
   return (
     <div className="App">
       <>
-      <Test4 />
-      <CatFact />
-        <Test3 />
-        <RegistrationForm />
-        <Note2 />
-        <Test2 />
-        <NoteTaker />
-        <Test />
+
+        <BrowserRouter>
+          <Routes>
+            <Route path="/test" element={<Test />} />
+            <Route path="/notetaker" element={<NoteTaker />} />
+            {/*
+            <Route path="/" element={<Test2 />} />
+            <Route path="/" element={<Note2 />} />
+            <Route path="/" element={<RegistrationForm />} />
+            <Route path="/" element={<Test3 />} />
+            <Route path="/" element={<CatFact />} />
+            <Route path="/" element={<Test4 />} />
+            */}
+          </Routes>
+        </BrowserRouter>
       </>
     </div>
   );

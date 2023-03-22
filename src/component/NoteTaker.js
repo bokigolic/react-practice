@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-const NoteTaker = () => {
+const NoteTaker = (props) => {
 
   const [input, setInput] = useState()
   const [notes, setNotes] = useState([])
