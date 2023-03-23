@@ -1,23 +1,18 @@
-import React from 'react'
+import { Link } from 'react-router-dom';
 
-const Home = () => {
+function Home() {
   return (
-    <div className="form">
-      <nav>
-        <ul className='navbar'>
-          <li><a href="/">Home</a></li>
-          <li><a href="/counter">Counter</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Testimonials</a></li>
-          <li><a href="#">Team</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact Us</a></li>
-        </ul>
-      </nav>
-      <h3 className='registration'>Home</h3>
+    <div>
+      <button>Counter</button>
+    <button>NoteTaker</button>
+     <button>Test2</button>
+     <button>Note2</button>
+      <button>RegistrationForm</button>
+    <button>Test3</button>
+ <button>CatFact</button>
+<button>Test4</button>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
