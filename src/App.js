@@ -19,7 +19,7 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-
+         
             <Route path="/" element={<Home />} />
             <Route path="/counter" element={<Counter />} />
             <Route path="/notetaker" element={<NoteTaker />} />
