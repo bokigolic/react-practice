@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const Test = (props) => {
+const Counter = (props) => {
   const [counter, setCounter] = useState(0);
 
   const handleClickPlus = () => {
@@ -26,4 +26,4 @@ setCounter(counter +1)
     </div>
   )
 }
-export default Test;
+export default Counter;

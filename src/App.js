@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import Test from './component/Test';
+import Counter from './component/Counter';
 import NoteTaker from './component/NoteTaker';
 import Test2 from './component/Test2';
 import Note2 from './component/Note2';
@@ -9,6 +9,7 @@ import Test3 from './component/Test3';
 import CatFact from './component/CatFact';
 import Test4 from './component/Test4';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './component/Home';
 
 
 function App() {
@@ -18,16 +19,17 @@ function App() {
 
         <BrowserRouter>
           <Routes>
-            <Route path="/test" element={<Test />} />
+
+            <Route path="/" element={<Home />} />
+            <Route path="/counter" element={<Counter />} />
             <Route path="/notetaker" element={<NoteTaker />} />
-            {/*
-            <Route path="/" element={<Test2 />} />
-            <Route path="/" element={<Note2 />} />
-            <Route path="/" element={<RegistrationForm />} />
-            <Route path="/" element={<Test3 />} />
-            <Route path="/" element={<CatFact />} />
-            <Route path="/" element={<Test4 />} />
-            */}
+            <Route path="/test2" element={<Test2 />} />
+            <Route path="/note2" element={<Note2 />} />
+            <Route path="/registrationform" element={<RegistrationForm />} />
+            <Route path="/test3" element={<Test3 />} />
+            <Route path="/catfact" element={<CatFact />} />
+            <Route path="/test4" element={<Test4 />} />
+
           </Routes>
         </BrowserRouter>
       </>
