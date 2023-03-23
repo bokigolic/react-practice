@@ -142,8 +142,8 @@ body {
   border-radius: 5px;
   width: 550px;
   margin: 20px auto;
-  padding: 20px;
   /* height: 600px; */
+  display: fle;
 }
 .registration{
  
@@ -173,14 +173,16 @@ body {
   text-align: center;
 }
 
-.navbar {
-  display: flex;
-  flex-direction: row;
-}
-.navbar li{
-  border: 1px solid black;
-  border-radius: 6px;
-  margin: 2px;
-  list-style: none;
 
+
+.buttonsi{
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.buttonsi button{
+  border-radius: 6px;
 }

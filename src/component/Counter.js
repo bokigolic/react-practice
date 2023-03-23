@@ -4,20 +4,18 @@ const Counter = (props) => {
   const [counter, setCounter] = useState(0);
 
   const handleClickPlus = () => {
-setCounter(counter +1)
+    setCounter(counter + 1)
   }
   const handleClickMinus = () => {
-    setCounter(counter -1)
+    setCounter(counter - 1)
 
   }
-  const handleClickReset = () =>{
+  const handleClickReset = () => {
     setCounter(0)
   }
   return (
     <div className="form">
-    <h3 className='registration'>Counter</h3>
-    
-
+      <h3 className='registration'>Counter</h3>
       <div>
         <button type="button" onClick={handleClickMinus}>-</button>
         <button type="button" onClick={handleClickPlus}>+</button>

@@ -60,29 +60,29 @@ const Note2 = () => {
 
   return (
 
-         <div className="form">
+    <div className="form">
       <h3 className='registration'>Note 2</h3>
-  
+
       <label for="name"></label>
       <input type="input" placeholder="Name..."
         name="ime"
         value={zaInput.ime}
         onChange={handleChange}
-      /> 
+      />
       <br />
       <label for="name"></label>
       <input type="input" placeholder="Last name..."
         name="prezime"
         value={zaInput.prezime}
         onChange={handleChange}
-      /> 
+      />
       <br />
       <label for="name"> </label>
       <input type="input" placeholder="someone@gmail.com"
         name="email"
         value={zaInput.email}
         onChange={handleChange}
-      /> 
+      />
       <br />
       <label for="name"></label>
       <input placeholder="Message..."
