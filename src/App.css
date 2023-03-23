@@ -172,3 +172,15 @@ body {
 .footer {
   text-align: center;
 }
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+}
+.navbar li{
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 2px;
+  list-style: none;
+
+}
