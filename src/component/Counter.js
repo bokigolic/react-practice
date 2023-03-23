@@ -8,7 +8,6 @@ const Counter = (props) => {
   }
   const handleClickMinus = () => {
     setCounter(counter - 1)
-
   }
   const handleClickReset = () => {
     setCounter(0)
