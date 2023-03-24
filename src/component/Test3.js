@@ -6,7 +6,7 @@ const Test3 = () => {
     //console.log("Ja sam samrt")
   }
   return (
-    <div className="form">
+    <div className="forma">
       <h3 className='registration'>CRUD test</h3>
       <label>Name: </label>
       <input

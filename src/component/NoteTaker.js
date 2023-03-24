@@ -25,7 +25,7 @@ const NoteTaker = (props) => {
   }
 
   return (
-    <div className="form">
+    <div className="forma">
     <h3 className='registration'>Note taker</h3>
       <form onSubmit={handleSubmit}>
         <label>Enter a note: </label>

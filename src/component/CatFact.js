@@ -16,7 +16,7 @@ const CatFact = () => {
   }, [])
   return (
 
-    <div className="form">
+    <div className="forma">
       <form>
         <div className='registration'><h3>About cat</h3>
           {facts}
