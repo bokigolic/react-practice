@@ -13,7 +13,7 @@ const Counter = (props) => {
     setCounter(0)
   }
   return (
-    <div className="form">
+    <div className="forma">
       <h3 className='registration'>Counter</h3>
       <div>
         <button type="button" onClick={handleClickMinus}>-</button>

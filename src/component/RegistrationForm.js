@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 const RegistrationForm = () => {
   return (
     <div>
-      <div className="form">
+      <div className="forma">
       <h3 className='registration'>Registration</h3>
         <div className="form-body">
           <div className="username">

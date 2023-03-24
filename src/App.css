@@ -188,8 +188,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: 
 
+
+}
+
+.projekti{
+display: flex;
+background-color: #858b86;
+position: absolute;
+top:120px;
 }
 
 

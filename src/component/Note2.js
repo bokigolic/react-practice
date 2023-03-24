@@ -60,7 +60,7 @@ const Note2 = () => {
 
   return (
 
-    <div className="form">
+    <div className="forma">
       <h3 className='registration'>Note 2</h3>
 
       <label for="name"></label>
