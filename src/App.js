@@ -10,6 +10,7 @@ import CatFact from './component/CatFact';
 import Test4 from './component/Test4';
 import './App.css'
 import Footer from "./Footer";
+import ColorClick from "./component/ColorClick";
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
           <Link to="/test3"><button className="button-6" role="button">Test3</button></Link>
           <Link to="/catfact"><button className="button-6" role="button">CatFact</button></Link>
           <Link to="/test4"><button className="button-6" role="button">Test4</button></Link>
-          <Link to="/"></Link>
+          <Link to="/color"><button className="button-6" role="button">Color</button></Link>
          
           <div className="projekti">
             <Routes>
@@ -37,6 +38,7 @@ function App() {
               <Route path="/test3" element={<Test3 />} />
               <Route path="/catfact" element={<CatFact />} />
               <Route path="/test4" element={<Test4 />} />
+              <Route path="/color" element={<ColorClick />} />
             </Routes>
           </div>
 
