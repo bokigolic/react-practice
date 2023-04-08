@@ -110,7 +110,7 @@ const Note2 = () => {
               <p>Message: {note.text.telefon}</p>
             </ol>
 
-            <div class="container">
+            <div className="container">
               <button type="button" onClick={() => handleEdit(note)}>Edit</button>
               <button type="button" onClick={() => handleDelete(note.id)}>Delete</button>
             </div>

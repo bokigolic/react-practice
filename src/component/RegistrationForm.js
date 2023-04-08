@@ -28,8 +28,8 @@ const RegistrationForm = () => {
             <input className="form__input" type="password" id="confirmPassword" placeholder="Confirm Password" />
           </div>
         </div>
-        <div class="footer">
-          <button type="submit" class="btn">Register</button>
+        <div className="footer">
+          <button type="submit" className="btn">Register</button>
         </div>
       </div>
     </div>

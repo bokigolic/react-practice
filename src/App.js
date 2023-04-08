@@ -16,14 +16,14 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <div className="form">
-          <Link to="/counter"><button class="button-6" role="button">Counter</button></Link>
-          <Link to="/notetaker"><button class="button-6" role="button">NoteTaker</button></Link>
-          <Link to="/calculator"><button class="button-6" role="button">Calculator</button></Link>
-          <Link to="/note2"><button class="button-6" role="button">Note2</button></Link>
-          <Link to="/registrationform"><button class="button-6" role="button">RegistrationForm</button></Link>
-          <Link to="/test3"><button class="button-6" role="button">Test3</button></Link>
-          <Link to="/catfact"><button class="button-6" role="button">CatFact</button></Link>
-          <Link to="/test4"><button class="button-6" role="button">Test4</button></Link>
+          <Link to="/counter"><button className="button-6" role="button">Counter</button></Link>
+          <Link to="/notetaker"><button className="button-6" role="button">NoteTaker</button></Link>
+          <Link to="/calculator"><button className="button-6" role="button">Calculator</button></Link>
+          <Link to="/note2"><button className="button-6" role="button">Note2</button></Link>
+          <Link to="/registrationform"><button className="button-6" role="button">RegistrationForm</button></Link>
+          <Link to="/test3"><button className="button-6" role="button">Test3</button></Link>
+          <Link to="/catfact"><button className="button-6" role="button">CatFact</button></Link>
+          <Link to="/test4"><button className="button-6" role="button">Test4</button></Link>
           <Link to="/"></Link>
          
           <div className="projekti">

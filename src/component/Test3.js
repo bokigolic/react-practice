@@ -26,7 +26,7 @@ const Test3 = () => {
         name="message"
       />
       <br />
-      <div class="container">
+      <div className="container">
         <button type="button" onClick={handleClick}>Send</button>
       </div>
     </div>
