@@ -14,7 +14,7 @@ const Counter = (props) => {
   }
   return (
     <div className="forma">
-      <h3 className='registration'>Counter</h3>
+      <h3 className='registration'>Counter {counter}</h3>
       <div>
         <button type="button" onClick={handleClickMinus}>-</button>
         <button type="button" onClick={handleClickPlus}>+</button>
